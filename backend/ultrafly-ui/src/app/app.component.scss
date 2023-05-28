@@ -1,0 +1,185 @@
+
+  .container {
+    background-color: #e0dede;
+    min-height: 90vh;
+    flex-direction: column;
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Add this line to vertically center the dropdowns */
+  }
+  
+  .container ng-select {
+    margin-top: 20px; /* Add spacing between the dropdowns if desired */
+  }
+  
+  header {
+    background-color: #f2f2f2; /* Set the header background color */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 30px; /* Add border radius to make the edges rounded */
+
+  }
+  .table-header{
+    color: indigo;
+    font-weight: bold;
+    padding: 10px 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  cursor: pointer;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+    
+  }
+  
+  nav {
+    background-color: #dddddd; /* Set the navigation background color */
+    padding: 10px; /* Add padding for spacing */
+  }
+  
+  main {
+    flex-grow: 1; /* Allow the main content to expand and fill the available space */
+    padding: 10px; /* Add padding for spacing */
+  }
+  
+  footer {
+    background-color: #f2f2f2; /* Set the footer background color */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 30px; /* Add border radius to make the edges rounded */
+
+  }
+  /* Reduce the size of the dropdown */
+.ng-select {
+  font-size: 14px; /* Adjust the font size as per your preference */
+  width: 200px; /* Adjust the width as per your preference */
+}
+
+/* Alter the styles of the dropdown */
+.ng-select .ng-select-container {
+  border: 1px solid #ccc; /* Customize the border style */
+  border-radius: 4px; /* Customize the border radius */
+}
+
+.ng-select .ng-select-container .ng-value-container {
+  padding: 8px; /* Adjust the padding as per your preference */
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-value {
+  background-color: #f0f0f0; /* Customize the background color of selected values */
+  color: #333; /* Customize the text color of selected values */
+}
+
+.ng-select .ng-select-container .ng-option {
+  padding: 8px; /* Adjust the padding as per your preference */
+}
+
+.ng-select .ng-select-container .ng-option.ng-option-selected {
+  background-color: #e0e0e0; /* Customize the background color of selected option */
+  color: #333; /* Customize the text color of selected option */
+}
+
+/* Customize the dropdown arrow */
+.ng-select .ng-select-container .ng-arrow-wrapper {
+  background-color: #ccc; /* Customize the background color of the arrow wrapper */
+}
+
+.ng-select .ng-select-container .ng-arrow {
+  border-color: #333 transparent transparent; /* Customize the color of the arrow */
+}
+
+.row {
+  display: flex;
+}
+
+.dropdown {
+  margin-right: 80px; /* Adjust spacing between dropdowns */
+}
+
+
+
+.inner-layout {
+  position: relative;
+  overflow-y: auto;
+  max-height: 300px; /* Adjust the maximum height as needed */
+}
+
+.scrollable-content {
+  padding-right: 15px; /* Create space for scrollbar */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* Adjust as needed */
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.styled-button {
+  background-color: indigo;;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 10px; /* Add margin to create space between the buttons */
+
+}
+.name-button{
+  background: none;
+  color: indigo;
+  border: none;
+  padding: 0;
+  font:inherit;
+  cursor: pointer;
+  outline: inherit;
+  font-weight: bold;
+  margin-right: 20px;
+
+}
+
+.no-record{
+  color: indigo;
+  font-weight: bold;
+
+}
+
+.styled-button:hover {
+  background-color: indigo;
+}
+
+.styled-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #4CAF50;
+}
+
+.tab-row {
+}
+
+
+.tab-row td {
+  padding: 10px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tab-row td:hover {
+  background-color: #e0e0e0;
+}
+
+.add{
+  margin-top: 20px; /* Add margin to move the div down */
+
+}

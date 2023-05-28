@@ -4,7 +4,6 @@ const catchAsync = require('./../utils/catchAsync');
 
 exports.getAllCars = catchAsync(async (req, res, next) => {
   let filter = {}
-  console.log(req.query)
   if (req.query.make) {
     filter.Make = String(req.query.make)
   }
@@ -21,7 +20,6 @@ exports.getAllCars = catchAsync(async (req, res, next) => {
     let limit = parseInt(req.query.limit)
     let page = parseInt(req.query.page)
     let total = await Cars.find(filter).countDocuments();
-    console.log(total)
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
@@ -37,7 +35,6 @@ exports.getAllCars = catchAsync(async (req, res, next) => {
         limit: limit
       };
     }
-    console.log(total, limit)
     results.total_page = Math.ceil(total / limit)
     cars = await Cars.find(filter).limit(limit).skip((page - 1) * limit).exec()
   } else {
@@ -55,7 +52,6 @@ exports.getAllCars = catchAsync(async (req, res, next) => {
 
 exports.updateNotes = catchAsync(async (req, res, next) => {
 
-  console.log(req.query)
   let update = { Notes: req.body.notes }
   if (req.query.removeNotes) {
     update = { $unset: { Notes: 1 } }

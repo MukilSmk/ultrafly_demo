@@ -1,0 +1,73 @@
+
+<div class="container">
+<main>
+    <div class="row">
+      <ng-select placeholder = "Model" class="dropdown"(change)='fetchData()' [(ngModel)]="selectedModel">
+        <ng-option *ngFor="let model of modelOptions" [value]="model">{{model}}</ng-option>
+     </ng-select>
+     <ng-select  placeholder = "Make" class="dropdown"(change)='fetchData()' [(ngModel)]="selectedMake">
+      <ng-option *ngFor="let make of makeOptions" [value]="make">{{make}}</ng-option>
+   </ng-select>
+   <ng-select placeholder = "Year" class="dropdown" (change)='fetchData()' [(ngModel)]="selectedYear">
+    <ng-option *ngFor="let year of yearOptions" [value]="year">{{year}}</ng-option>
+  </ng-select>
+    </div>
+    <div class="row add" >
+      <div class="selected-cars">
+        <button class="name-button" (click)="openPopup()">Add Note</button>
+      </div>
+      <br>
+      <label>
+      <input type="checkbox"  type="checkbox" (change)="selectAllTrims($event)">
+      Select All Trims
+    </label>
+    </div>
+    
+    
+    
+    <br>
+    <div class="inner-layout">
+      
+      <div class="scrollable-content">
+        
+      <table *ngIf="displayItems?.length != 0"class="table">
+
+        <thead>
+          <tr>
+            <th style="width:5%;" class="table-header"></th>
+            <th style="width:40%;" class="table-header">Trim</th>
+            <th style="width:40%;" class="table-header">Engine</th>
+            <th style="width:20%;" class="table-header">Note</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tab-row" *ngFor="let car of displayItems">
+            <td><input type="checkbox" [checked]="isCarSelected(car)" (change)="selectTrim($event,car._id)"></td>
+            <td>{{ car.Trim }}</td>
+            <td>{{ car.Engine }}</td>
+            <td>{{ car?.Notes }}</td>
+
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="displayItems?.length == 0" class="centered-container">
+        <p class="centered-text no-record">
+        No Trims Found
+        </p>
+      </div>
+      
+    </div>
+    
+
+  </div>
+  <div class="pagination">
+    <button class="styled-button"  (click)="previousPage()" [disabled]="page === 1">Previous</button>
+    <button class="styled-button"  (click)="nextPage()" [disabled]="!showNextPage">Next</button>
+  </div>
+
+
+   
+  </main>
+</div>
